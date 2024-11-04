@@ -21,14 +21,17 @@ header{
     justify-content: center;
     align-items: center;
     font-size: 2rem;
+    border-bottom: 1px solid #eaeeee;;
 }
 
 main{
     display: grid;
     grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr;
 }
 
 .sidebar{
+    border-right: 1px solid #eaeeee;
     padding: 1rem;
     background-color: #111827;
     display: flex;
@@ -37,6 +40,11 @@ main{
     align-items: center;
     gap: 2rem;
     color: #eaeeee;
+}
+
+.sidebar h2{
+    font-weight: 900;
+    font-size: 2rem;
 }
 
 .center{
@@ -59,7 +67,8 @@ main{
     background-color: #2b3544;
 }
 
-.task-inbox button:hover{
+.task-inbox button:hover,
+.task-inbox button.active{
     background-color: #485870;
 }
 
@@ -76,4 +85,77 @@ main{
 
 .addProject:hover{
     background-color: #0b4d47;
+}
+
+.modal{
+    position: fixed;
+    border-radius: 1rem;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f4f5f6;
+    color: black;
+    border: 1px solid black;
+    height: 500px;
+    width: 500px;
+    font-size: 1.5rem;
+    border-radius: .5rem;
+    display: none;
+}
+
+.modal.active{
+    display: block;
+}
+
+.modal .form{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form input,
+.form button{
+    width: 80%;
+    padding: .5rem;
+    border-radius: .5rem;
+    border: 1px solid black;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.overlay.active{
+    display: block;
+}
+
+.priority{
+    text-align: center;
+}
+
+.priority-level{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.priority-level input{
+    margin-left: 1rem;
+}
+
+.form button,
+.form input[type="radio"],
+.form input[type="date"]{
+    cursor: pointer;
 }
