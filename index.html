@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" type="module"></script>
+    <script src="script.js" defer></script>
     <title>Todo List</title>
 </head>
 <body>
@@ -16,18 +16,41 @@
                 <li><button>Today</button></li>
                 <li><button>This Week</button></li>
             </ul>
-            <div class="projects">
+            <!-- <div class="projects">
                 <h2>Projects</h2>
                 <ul>
 
                 </ul>
-            </div>
+            </div> -->
             <button class="addProject" id="addProject">+ Add Project</button>
         </div>
-        <div class="center">
+        <div class="center" id="container">
+
+            <div class="task">
+                <div class="first">
+                    <h3>Eat a potato</h3>
+                    <p>01/12/2024</p>
+                </div>
+            </div>
+            <div class="task low">
+                <div class="first">
+                    <h3>Eat a potato</h3>
+                    <p>01/12/2024</p>
+                </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel rem illo pariatur necessitatibus fugit nihil! Distinctio, perferendis omnis! Voluptas, fugiat?</p>
+            </div>
+            <div class="task high">
+                <h3>Eat a potato</h3>
+                <p>01/12/2024</p>
+                <div></div>
+            </div>
+            <div class="task done">
+                <h3>Eat a potato</h3>
+                <p>01/12/2024</p>
+            </div>
 
         </div>
-        <div class="modal active">
+        <div class="modal" id="modal">
             <h2>Add Task</h2>
             <form action="#" class="form" id="form">
                 <div class="form-element">
@@ -36,17 +59,17 @@
                 </div>
                 <div class="form-element">
                     <label for="description">Description:</label>
-                    <textarea type="text" name="description" id="description" required maxlength="100"
+                    <textarea type="text" name="description" id="description" maxlength="100"
                     rows="3" cols="50"></textarea>
                 </div>
                 <div class="form-element">
                     <label for="dueDate">Due date:</label>
-                    <input type="date" name="dueDate" id="dueDate">
+                    <input type="date" name="dueDate" id="dueDate" required>
                 </div>
                 <div class="form-element">
                     <h3>Priority Level:</h3>
                     <div class="priority-level">
-                        <input type="radio" id="low" name="priority" value="low">
+                        <input type="radio" id="low" name="priority" value="low" required>
                         <label for="low">Low</label><br>
                         <input type="radio" id="normal" name="priority" value="normal">
                         <label for="normal">Normal</label><br>
