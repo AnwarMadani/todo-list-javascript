@@ -88,8 +88,8 @@ main{
 }
 
 .modal{
+    text-align: center;
     position: fixed;
-    border-radius: 1rem;
     z-index: 1;
     top: 50%;
     left: 50%;
@@ -99,31 +99,58 @@ main{
     border: 1px solid black;
     height: 500px;
     width: 500px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     border-radius: .5rem;
-    display: none;
+    /* display: none; */
+    display: block;
 }
+
 
 .modal.active{
     display: block;
 }
 
 .modal .form{
-    height: 100%;
+    height: 90%;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap: 1rem;
 }
 
-.form input,
+.form > div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+}
+
+
+.form #title,
 .form button{
     width: 80%;
     padding: .5rem;
     border-radius: .5rem;
     border: 1px solid black;
+}
+
+.form #dueDate{
+    padding: .5rem;
+    border-radius: .5rem;
+    border: 1px solid black;
+}
+
+.priority-level{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.priority-level label{
+    margin-right: 2rem;
 }
 
 .overlay{
@@ -140,19 +167,6 @@ main{
     display: block;
 }
 
-.priority{
-    text-align: center;
-}
-
-.priority-level{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.priority-level input{
-    margin-left: 1rem;
-}
 
 .form button,
 .form input[type="radio"],

@@ -28,25 +28,35 @@
 
         </div>
         <div class="modal active">
+            <h2>Add Task</h2>
             <form action="#" class="form" id="form">
-                <label for="title">Title:</label>
-                <input type="text" name="title" id="title" required maxlength="40">
-                <label for="description">Description:</label>
-                <input type="text" name="description" id="description" required maxlength="100">
-                <label for="dueDate">Due date:</label>
-                <input type="date" name="dueDate" id="dueDate">
-                <div class="priority">
+                <div class="form-element">
+                    <label for="title">Title:</label>
+                    <input type="text" name="title" id="title" required maxlength="40">
+                </div>
+                <div class="form-element">
+                    <label for="description">Description:</label>
+                    <textarea type="text" name="description" id="description" required maxlength="100"
+                    rows="3" cols="50"></textarea>
+                </div>
+                <div class="form-element">
+                    <label for="dueDate">Due date:</label>
+                    <input type="date" name="dueDate" id="dueDate">
+                </div>
+                <div class="form-element">
                     <h3>Priority Level:</h3>
                     <div class="priority-level">
-                        <input type="radio" id="very-important" name="priority" value="very-important">
-                        <label for="very-important">Very Important</label><br>
-                        <input type="radio" id="important" name="priority" value="important">
-                        <label for="important">Important</label><br>
-                        <input type="radio" id="not-important" name="priority" value="not-important">
-                        <label for="not-important">Not Important</label> 
+                        <input type="radio" id="low" name="priority" value="low">
+                        <label for="low">Low</label><br>
+                        <input type="radio" id="normal" name="priority" value="normal">
+                        <label for="normal">Normal</label><br>
+                        <input type="radio" id="high" name="priority" value="high">
+                        <label for="high">High</label> 
                     </div>
                 </div>
-                <button type="submit">Submit</button>
+                <div class="form-element">
+                    <button type="submit">Submit</button>
+                </div>
             </form>
         </div>
         <div class="overlay" id="overlay"></div>
