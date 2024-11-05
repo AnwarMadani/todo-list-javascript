@@ -14,18 +14,7 @@ datePicker.max = yyyy + '/' + mm + '/' + dd;
 const container = document.getElementById('container');
 let tasks = [];
 addProjectBtn.addEventListener("click", openModal);
-let tasksOnScreen = document.querySelectorAll('.task');
 
-tasksOnScreen.forEach((task) => task.addEventListener("click", (e) => crossTask(e)));
-
-let firstDivs = document.querySelectorAll('.first');
-
-    firstDivs.forEach((div) => div.addEventListener("click",(e) => crossTask(e)))
-
-function crossTask(e){
-    console.log('crossed');
-    e.target.classList.toggle('done')
-}
 
 function openModal(){
     form.reset();
@@ -106,13 +95,7 @@ function updateTasksUi(){
         }
         
     })
-    tasksOnScreen = document.querySelectorAll('.task');
 
-    tasksOnScreen.forEach((task) => task.addEventListener("click", (e) => crossTask(e)));
-
-    firstDivs = document.querySelectorAll('.first');
-
-    firstDivs.forEach((div) => div.addEventListener("click",(e) => crossTask(e)))
 }
 
 class Task {

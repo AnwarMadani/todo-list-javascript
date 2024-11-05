@@ -204,8 +204,3 @@ main{
 .task.high{
     background-color: rgb(163, 45, 45);
 }
-
-.task.done{
-    text-decoration: line-through;
-    background-color: rgb(196, 196, 196);
-}
