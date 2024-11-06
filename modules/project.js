@@ -39,8 +39,8 @@ export default class Project{
 
     getTasksOfToday(){
         return this.tasks.filter((task) => {
-            const taskDate = new Date(task.getDate());
-            return taskDate == today
+            // const taskDate = new Date(task.getDate());
+            return task.getDate() == today
         })
     }
 

@@ -3,7 +3,7 @@ var dd = String(today.getDate()).padStart(2, '0');
 var mm = String(today.getMonth() + 1).padStart(2, '0');
 var yyyy = today.getFullYear();
 
-today = dd + '/' + mm + '/' + yyyy;
+today = yyyy + '-' + mm + '-' + dd;
 
 let myTasks = [];
 const addTaskBtn = document.getElementById('addTask');
@@ -63,9 +63,9 @@ function getTask(title){
 }
 
 
-function updateTasksContainer(){
+function updateTasksContainer(tasks){
     container.innerHTML = '';
-    for(let task of myTasks){
+    for(let task of tasks){
         createTaskCard(task);
     }
 }
@@ -125,13 +125,34 @@ function deleteTask(e){
     title = title[1].split('<');
     title = title[0];
     removeTaskFromTasks(title);
-    updateTasksContainer();
+    updateTasksContainer(myTasks);
 }
 
 function addTask(e){
     e.preventDefault();
     const newTask = createTask()
     addTaskToTasks(newTask);
-    updateTasksContainer();
+    updateTasksContainer(myTasks);
     closeModal();
 }
+
+
+// Inbox Button
+
+const inboxBtn = document.getElementById('inbox');
+const todayBtn = document.getElementById('today');
+let todayTasks = [];
+
+inboxBtn.addEventListener('click', (e) => updateTasksContainer(myTasks));
+
+todayBtn.addEventListener('click', (e) => {
+    todayTasks = [];
+    myTasks.filter((task) => {
+        if(task.getDate() === today){
+            if(!todayTasks.includes(task)){
+                todayTasks.push(task);
+            }
+        }});
+    updateTasksContainer(todayTasks);
+});
+
